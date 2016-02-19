@@ -1,0 +1,4 @@
+<div class="pull-right">
+    Jump to image :
+    <input type="number" min="1" max="{{maximum}}" #num (change)="resetCurrent(num.value)" [(ngModel)]="current">
+</div>

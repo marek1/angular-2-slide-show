@@ -1,0 +1,3 @@
+<slide-show-control class="control" (changed)="setCurrent($event)" [maximum]="pics.length" [current]="current"></slide-show-control>
+<slide-show-images [pics]="pics" [current]="current"></slide-show-images>
+<slide-show-previews (changed)="setCurrent($event)" [pics]="pics" [current]="current"></slide-show-previews>

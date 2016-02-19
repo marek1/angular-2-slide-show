@@ -1,0 +1,5 @@
+<div class="album">
+    <div *ngFor="#pic of pics; #i=index">
+        <slide-show-image [pic]="pic" class="full-image" [ngClass]="{active : isCurrent(i)}"></slide-show-image>
+    </div>
+</div>

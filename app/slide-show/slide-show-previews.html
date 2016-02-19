@@ -1,0 +1,5 @@
+<div class="album">
+    <div *ngFor="#pic of pics; #i=index" class="pull-left preview" style="{{getPercent(pics.length)}}" [ngClass]="{active : isCurrent(i)}" (click)="resetCurrent(i)">
+        <slide-show-preview [pic]="pic" ></slide-show-preview>
+    </div>
+</div>
