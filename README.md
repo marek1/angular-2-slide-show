@@ -8,7 +8,10 @@ DEMO : http://marek-sonnabend.de/demos/angular-1-5-slide-show
 
 Now I want to create the same app using Angular 2 (with Typescript).
 
-Setting up an Angular 2 app : http://marek-sonnabend.de/blog/2016/02/12/Getting-started-with-Angular2/
+Github : https://github.com/marek1/angular-2-slide-show
+DEMO : http://marek-sonnabend.de/demos/angular-2-slide-show
+
+The setup app the Angular 2 app please refer to : http://marek-sonnabend.de/blog/2016/02/12/Getting-started-with-Angular2/
 
 I use System.js which takes care of transpiling Typescript to Javascript (ES5), which is configured in the index.html file (in project root) :
 
