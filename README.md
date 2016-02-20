@@ -20,6 +20,9 @@ I use System.js which takes care of transpiling Typescript to Javascript (ES5), 
 	    <app>Loading</app>
     </body>
 
+Components
+----------
+
 I need to create an *app*- component (which has a selector *app* ), which renders a view. The view (template) will have a child component *SlideShow* (which has a selector *slide-show*). In order to use the selector *slide-show* I need to import the component and pass it as directive into the *app* component. Finally I will *bootstrap* the app :
 
     import {bootstrap} from 'angular2/platform/browser';
@@ -67,6 +70,10 @@ I create the following bindings :
  - **current** : holds the number if the currently selected image
  - **pics** : holds the URLs to the images
 
+**A general information about bindings** : 
+
+> While property bindings are used to pass data from a parent to a child components, event bindings are used to pass data from a child to a parent component.
+
 As I want to actually be able to change ***current*** in the child components slide-show-control and slide-show-preview I need to use an EventHandler (named *changed*) :
 
 	(changed)="setCurrent($event)"
@@ -94,3 +101,39 @@ which will emit the event and pass the new value. The *setCurrent* method assign
     setCurrent(_newValue){
         this.current = _newValue;
     }
+
+Angular 2 directives
+--------------------
+
+To iterate over the *pic* array I use Angular 2's directive *ngFor :
+
+    <div *ngFor="#pic of pics; #i=index">
+        {{pic}}
+    </div>
+    
+    
+In Angular 1.x *$index* is always available, while in Angular 2 you will have to explicitely assign it.    
+
+Another directive I use is *ngClass*, which evaluates an expression and adds CSS classes depending on whether that expression is true, i.e. 
+
+	[ngClass]="{active : isCurrent(i)}"
+
+I could also make use of *ngIf to hide or show elements in the view; just like ng-if or ng-show in Angular 1.x.
+
+Another 
+
+Event binding
+-------------
+
+I bind methods to user events using parentheses, i.e. (click)="someThing() or : 
+
+    (click)="resetCurrent(i)"
+    
+
+Property binding
+----------------
+
+I bind properties using the square brackets [], i.e. [model]="myPic" or : 
+
+    <slide-show-preview [pic]="pic" ></slide-show-preview>
+    
