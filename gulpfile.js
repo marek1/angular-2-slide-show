@@ -32,8 +32,8 @@ gulp.task('prod', ['copy:libs', 'copy:assets'], function () {
         .pipe(removeCode({production: true}))
         .pipe(replace('<!-- DIST###/', ''))
         .pipe(replace('/###DIST -->', ''))
-        .pipe(replace('href="../css', 'href="http://marek-sonnabend.de/demos/angular-2-slide-show'))
-        .pipe(replace('base href="/"', 'base href="http://marek-sonnabend.de/demos/angular-2-slide-show"'))
+        .pipe(replace('href="../css', 'href="http://marek-sonnabend.de/demos/angular-2-slide-show/'))
+        .pipe(replace('base href="/"', 'base href="http://marek-sonnabend.de/demos/angular-2-slide-show/"'))
         .pipe(gulp.dest('./dist'));
 });
 
